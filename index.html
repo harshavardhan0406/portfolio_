@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Harshavardhan Reddy M | Python & Full-Stack Developer</title>
+<meta name="description" content="Portfolio of Harshavardhan Reddy M: Python developer building full-stack and Generative AI applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0c1019; --surface:#131a29; --surface2:#182034; --line:#232d45;
+  --text:#e9edf7; --muted:#9aa6c0; --accent:#8fa5ff; --accent2:#7fe3cd;
+  --r:16px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+
+/* nav */
+nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);background:rgba(12,16,25,.78);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;font-size:1.05rem;letter-spacing:-.01em}
+.logo span{color:var(--accent)}
+.links{display:flex;gap:26px;font-size:.92rem;color:var(--muted)}
+.links a{transition:color .2s}
+.links a:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;font-weight:600;font-size:.93rem;border:1px solid var(--line);transition:transform .2s,background .2s,border-color .2s}
+.btn:hover{transform:translateY(-2px);border-color:var(--accent)}
+.btn.primary{background:linear-gradient(135deg,var(--accent),#a78bfa);color:#0c1019;border:none}
+.btn.primary:hover{box-shadow:0 8px 28px rgba(143,165,255,.35)}
+.btn.small{padding:8px 16px;font-size:.85rem}
+
+/* hero */
+.hero{position:relative;padding:110px 0 90px;overflow:hidden}
+.hero::before{content:"";position:absolute;top:-180px;right:-120px;width:560px;height:560px;border-radius:50%;background:radial-gradient(circle,rgba(143,165,255,.22),transparent 65%);animation:drift 14s ease-in-out infinite alternate;pointer-events:none}
+.hero::after{content:"";position:absolute;bottom:-220px;left:-160px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(127,227,205,.12),transparent 65%);animation:drift 18s ease-in-out infinite alternate-reverse;pointer-events:none}
+@keyframes drift{to{transform:translate(-40px,40px) scale(1.12)}}
+.hero .wrap{position:relative;z-index:1}
+.status{display:inline-flex;align-items:center;gap:10px;padding:7px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface);font-size:.88rem;color:var(--muted);margin-bottom:28px}
+.dot{width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 0 rgba(127,227,205,.6);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 9px rgba(127,227,205,0)}100%{box-shadow:0 0 0 0 rgba(127,227,205,0)}}
+h1{font-size:clamp(2.5rem,7vw,4.6rem);line-height:1.08;font-weight:800;letter-spacing:-.035em;max-width:14ch}
+h1 em{font-style:normal;background:linear-gradient(120deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{margin-top:24px;max-width:56ch;font-size:1.12rem;color:var(--muted)}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
+.social{display:flex;gap:12px;margin-top:34px}
+.social a{width:44px;height:44px;display:grid;place-items:center;border-radius:12px;border:1px solid var(--line);background:var(--surface);color:var(--muted);transition:all .2s}
+.social a:hover{color:#7fe3cd;border-color:#7fe3cd;transform:translateY(-3px)}
+.social svg{width:20px;height:20px;fill:currentColor}
+
+/* sections */
+section{padding:84px 0}
+h2{font-size:clamp(1.7rem,4vw,2.3rem);font-weight:800;letter-spacing:-.025em;line-height:1.2;margin-bottom:12px}
+.sub{color:var(--muted);max-width:58ch;margin-bottom:40px}
+.about{display:grid;grid-template-columns:1.4fr 1fr;gap:40px;align-items:start}
+.about p{color:var(--muted)}
+.about p+p{margin-top:14px}
+.facts{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.facts div{display:flex;justify-content:space-between;gap:16px;padding:12px 0;border-bottom:1px solid var(--line);font-size:.93rem}
+.facts div:last-child{border:none}
+.facts span{color:var(--muted)}
+.facts b{font-weight:600;text-align:right}
+
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:18px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px;transition:border-color .25s,transform .25s}
+.card:hover{border-color:#34426a}
+.card h3{font-size:1.02rem;font-weight:700;margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:.82rem;padding:5px 12px;border-radius:999px;background:var(--surface2);color:#c4cde4;border:1px solid var(--line)}
+
+.projects{display:grid;gap:22px}
+.project{display:grid;grid-template-columns:1fr;gap:6px;padding:32px;background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:20px;transition:transform .3s,border-color .3s}
+.project:hover{transform:translateY(-4px);border-color:var(--accent)}
+.ptop{display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;align-items:baseline}
+.project h3{font-size:1.35rem;font-weight:700;letter-spacing:-.015em}
+.date{font-size:.88rem;color:var(--muted)}
+.project ul{margin:14px 0 18px 20px;color:var(--muted);font-size:.97rem}
+.project li{margin-bottom:8px;padding-left:4px}
+.project li::marker{color:var(--accent)}
+.plinks{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+
+.timeline{border-left:2px solid var(--line);margin-left:6px;padding-left:28px;display:grid;gap:34px}
+.item{position:relative}
+.item::before{content:"";position:absolute;left:-36px;top:8px;width:14px;height:14px;border-radius:50%;background:var(--bg);border:3px solid var(--accent)}
+.item h3{font-size:1.1rem;font-weight:700}
+.item .where{color:var(--accent);font-size:.93rem;font-weight:500}
+.item .date{display:block;margin:2px 0 10px}
+.item p,.item li{color:var(--muted);font-size:.96rem}
+.item ul{margin-left:18px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.heading{font-size:1.5rem;font-weight:800;letter-spacing:-.02em;margin-bottom:30px}
+
+.contact{text-align:center}
+.contact .box{background:linear-gradient(160deg,var(--surface),var(--surface2));border:1px solid var(--line);border-radius:28px;padding:64px 24px;position:relative;overflow:hidden}
+.contact .box::before{content:"";position:absolute;inset:-40% 20% auto;height:260px;background:radial-gradient(circle,rgba(143,165,255,.2),transparent 70%);pointer-events:none}
+.contact .box>*{position:relative}
+.contact p{color:var(--muted);max-width:46ch;margin:0 auto 30px}
+.contact .cta{justify-content:center;margin-top:0}
+.contact .social{justify-content:center}
+footer{padding:34px 0;text-align:center;color:var(--muted);font-size:.88rem;border-top:1px solid var(--line)}
+
+/* one reveal on load */
+.hero .wrap>*{opacity:0;transform:translateY(18px);animation:in .7s cubic-bezier(.2,.7,.2,1) forwards}
+.hero .wrap>*:nth-child(2){animation-delay:.1s}.hero .wrap>*:nth-child(3){animation-delay:.2s}
+.hero .wrap>*:nth-child(4){animation-delay:.3s}.hero .wrap>*:nth-child(5){animation-delay:.4s}
+@keyframes in{to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.hero .wrap>*{opacity:1;transform:none}html{scroll-behavior:auto}}
+
+@media (max-width:820px){
+  .links{display:none}
+  .about,.two{grid-template-columns:1fr}
+  .two{gap:64px}
+  section{padding:64px 0}
+  .hero{padding:72px 0 56px}
+  .project{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <a href="#top" class="logo">Harsha<span>vardhan</span></a>
+    <div class="links">
+      <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+      <a href="#experience">Experience</a><a href="#contact">Contact</a>
+    </div>
+    <!-- Put your resume PDF in the same folder and name it exactly like this -->
+    <a class="btn primary small" href="Resume.pdf" download>Download resume</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="status"><span class="dot"></span>Open to entry-level Python and Software Developer roles</div>
+    <h1>Hi, I'm Harshavardhan. I build <em>reliable</em> full-stack and AI apps.</h1>
+    <p class="lead">MCA graduate from Bangalore with hands-on experience in Python, Django, FastAPI, React and Generative AI. I like turning ideas into secure, production-ready software people can actually use.</p>
+    <div class="cta">
+      <a class="btn primary" href="#projects">View my projects</a>
+      <a class="btn" href="Resume.pdf" >View resume</a>
+    </div>
+    <div class="social">
+      <a href="https://github.com/harshavardhan0406" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+      <a href="https://www.linkedin.com/in/harshavardhan9731" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+      <a href="mailto:harshavardhanreddy0406@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.8 19.8 6H4.2zM20 7.9l-7.4 5.5a1 1 0 0 1-1.2 0L4 7.9V18h16V7.9z"/></svg></a>
+    </div>
+  </div>
+</header>
+
+<section id="about">
+  <div class="wrap">
+    <h2>About me</h2>
+    <p class="sub">A developer who cares about clean code, secure APIs and interfaces that are easy to use.</p>
+    <div class="about">
+      <div>
+        <p>I completed my Master of Computer Applications at BMS Institute of Technology and Management with a CGPA of 8.47. Along the way I built full-stack web apps with Django, FastAPI, React and Firebase, and explored machine learning and Generative AI.</p>
+        <p>My recent work includes a RAG-based knowledge assistant that answers questions from uploaded documents with cited sources, and a real-time community platform designed for elderly users in six languages.</p>
+        <p>I'm looking for an entry-level Software Developer or Python Developer role where I can build reliable, production-ready software and keep learning from a strong team.</p>
+      </div>
+      <div class="facts">
+        <div><span>Location</span><b>Bangalore, India</b></div>
+        <div><span>Education</span><b>MCA, CGPA 8.47</b></div>
+        <div><span>Focus</span><b>Python, Full-stack, GenAI</b></div>
+        <div><span>Looking for</span><b>Entry-level developer role</b></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <div class="wrap">
+    <h2>Technical skills</h2>
+    <p class="sub">The tools I use to design, build and ship applications.</p>
+    <div class="skills">
+      <div class="card"><h3>Languages</h3><div class="tags"><span>Python</span><span>JavaScript</span><span>Java</span><span>SQL</span></div></div>
+      <div class="card"><h3>Backend and APIs</h3><div class="tags"><span>Django</span><span>FastAPI</span><span>Flask</span><span>REST API design</span><span>Pydantic</span><span>Authentication and session security</span></div></div>
+      <div class="card"><h3>Generative AI</h3><div class="tags"><span>RAG</span><span>LangChain</span><span>Hugging Face Transformers</span><span>Embeddings</span><span>Vector search</span><span>Prompt engineering</span><span>NLP</span></div></div>
+      <div class="card"><h3>Frontend</h3><div class="tags"><span>React.js</span><span>HTML</span><span>CSS</span><span>Tailwind CSS</span><span>Responsive design</span><span>i18n</span></div></div>
+      <div class="card"><h3>Databases</h3><div class="tags"><span>MySQL</span><span>MongoDB</span><span>SQLite</span><span>Cloud Firestore</span></div></div>
+      <div class="card"><h3>Data and ML</h3><div class="tags"><span>Pandas</span><span>NumPy</span><span>Scikit-learn</span></div></div>
+      <div class="card"><h3>Tools and deployment</h3><div class="tags"><span>Git</span><span>GitHub</span><span>Docker</span><span>Render</span><span>Vercel</span><span>Firebase Hosting</span><span>VS Code</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <div class="wrap">
+    <h2>Projects</h2>
+    <p class="sub">Two deployed apps you can try right now.</p>
+    <div class="projects">
+
+      <article class="project">
+        <div class="ptop"><h3>AI Knowledge Assistant (RAG)</h3><span class="date">Feb 2026 – June 2026</span></div>
+        <div class="tags" style="margin-top:8px"><span>Django</span><span>React.js</span><span>Tailwind CSS</span><span>Gemini API</span><span>SQLite</span></div>
+        <ul>
+          <li>Full-stack RAG app where users upload PDF, TXT or MD files, ask questions and get answers and summaries with cited source excerpts.</li>
+          <li>Built the retrieval pipeline end to end: PDF text extraction, overlapping chunking, 768-dimensional Gemini embeddings in SQLite, and cosine-similarity search to ground answers and reduce hallucination.</li>
+          <li>Designed a REST-style Django API (upload, ask, summarize, delete) with session-based document isolation, CSRF protection, upload limits, and retry/backoff for API rate limits.</li>
+        </ul>
+        <div class="plinks">
+          <a class="btn primary small" href="https://personal-assistant-ztcm.onrender.com" target="_blank" rel="noopener">Live demo</a>
+          <a class="btn small" href="https://github.com/harshavardhan0406/knowledge-assistant" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="ptop"><h3>ElderNest: Elderly Community Platform</h3><span class="date">Dec 2024 – Feb 2025</span></div>
+        <div class="tags" style="margin-top:8px"><span>React.js</span><span>Firebase</span><span>Firestore</span><span>Tailwind CSS</span></div>
+        <ul>
+          <li>Real-time community app for old-age home residents with a social feed, friend discovery, group and private chat, events calendar, and an emergency and healthcare info page.</li>
+          <li>Admin-managed access model with ID/password logins mapped to Firebase Authentication, plus a dashboard to add, edit and deactivate residents and a friend-request flow with live badges.</li>
+          <li>Secured private chats and friends-only posts with Firestore Security Rules; built live feed and chat with Firestore listeners.</li>
+          <li>Large-text, high-contrast UI localized into six languages (English, Hindi, Kannada, Telugu, Tamil, Malayalam) using react-i18next.</li>
+        </ul>
+        <div class="plinks">
+          <a class="btn primary small" href="https://elder-nest-tau.vercel.app" target="_blank" rel="noopener">Live demo</a>
+          <a class="btn small" href="https://github.com/harshavardhan0406/eldernest" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="wrap two">
+    <div>
+      <h2 class="heading">Experience</h2>
+      <div class="timeline">
+        <div class="item">
+          <h3>Python Programming Intern</h3>
+          <div class="where">InternPe, Remote</div>
+          <span class="date">July 2024 – Aug 2024</span>
+          <ul>
+            <li>Completed a 4-week program covering Python, data analysis (Pandas, NumPy) and machine learning with Scikit-learn.</li>
+            <li>Built spam detection and sentiment analysis models as a capstone, covering data cleaning, text preprocessing, training and evaluation.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="heading">Education</h2>
+      <div class="timeline">
+        <div class="item">
+          <h3>Master of Computer Applications (MCA)</h3>
+          <div class="where">BMS Institute of Technology and Management, Bangalore</div>
+          <span class="date">2023 – 2025 · CGPA 8.47</span>
+        </div>
+        <div class="item">
+          <h3>Bachelor of Computer Applications (BCA)</h3>
+          <div class="where">Kristu Jayanti College, Bangalore</div>
+          <span class="date">2020 – 2023</span>
+        </div>
+      </div>
+      <h2 class="heading" style="margin-top:56px">Certifications</h2>
+      <div class="timeline">
+        <div class="item"><h3>Data Structures and Algorithms in Java</h3><div class="where">Infosys Springboard</div></div>
+        <div class="item"><h3>AI/ML Fundamentals</h3><div class="where">CampusX</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="box">
+      <h2>Let's work together</h2>
+      <p>I'm open to entry-level Software Developer and Python Developer roles. Send me a message or grab my resume.</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:harshavardhanreddy0406@gmail.com">Email me</a>
+        <a class="btn" href="Resume.pdf" download>Download resume</a>
+        <a class="btn" href="tel:+919731930349">+91 97319 30349</a>
+      </div>
+      <div class="social">
+        <a href="https://github.com/harshavardhan0406" target="_blank" rel="noopener" aria-label="GitHub"><svg viewBox="0 0 24 24"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.18 1.76 1.18 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.18-3.09-.12-.29-.51-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.18 1.83 1.18 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg></a>
+        <a href="https://www.linkedin.com/in/harshavardhan9731" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg></a>
+        <a href="mailto:harshavardhanreddy0406@gmail.com" aria-label="Email"><svg viewBox="0 0 24 24"><path d="M2 5.5A1.5 1.5 0 0 1 3.5 4h17A1.5 1.5 0 0 1 22 5.5v13a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 18.5v-13zm2.2.5L12 11.8 19.8 6H4.2zM20 7.9l-7.4 5.5a1 1 0 0 1-1.2 0L4 7.9V18h16V7.9z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>© 2026 Harshavardhan Reddy M · Bangalore, India</footer>
+
+</body>
+</html>
